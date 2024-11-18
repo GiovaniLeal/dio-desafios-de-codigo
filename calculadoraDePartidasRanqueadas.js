@@ -1,41 +1,23 @@
-//Variáveis 
-let nivelHeroi
-let saldoVitorias 
+//Desafios JavaScript na DIO têm funções "gets" e "print" acessíveis globalmente:
+//- "gets" : lê UMA linha com dado(s) de entrada (inputs) do usuário;
+//- "print": imprime um texto de saída (output), pulando linha.
 
+// Entrada de dados. Lembre-se: O parseInt(()) é importante para a conversão dos valores de entrada(String) para um valor numérico(int).
+const totalSalas = parseInt(gets(3));
+//Aqui temos uma demonstração de array com valores já predefinidos:
+const salasComTesouro = [2, 4, 7];
+const salasComMonstro = [3, 6, 8];
 
-//Função que calcula o saldo de vitórias e retorta o saldo de partidas rankeadas
-function partidasRankeadas (quantidadeVitorias, quantidadeDerrotas ) {
-    saldoVitorias = quantidadeVitorias - quantidadeDerrotas
-    return saldoVitorias
+//Aqui temos uma forma de loop para percorrer cada sala da masmorra:
+for (let sala = 1; sala <= totalSalas; sala++) {
+//Utilizamos o .includes() para verificar se um número está presente nos arrays:
+    const temTesouro = salasComTesouro.includes(sala);
+    const temMonstro = salasComMonstro.includes(sala);
+
+//TODO: Agora implemente uma condição necessária para verificar e exibir se há tesouro na sala e se há montro na sala:
+    if ( temTesouro === sala ) {
+        print("Tesouro na sala " + sala + "!");
+    } else if ( temMonstro = true  ) {
+        print("Monstro na sala " + sala + "!");
+    }
 }
-
-//Chamada da função = ( Essa função deve ser chamada antes da classificação do jogador) = 
-partidasRankeadas(70,5)
-
-
-//Loop que verifica a classicação do jogador de acordo com o saldo de vitórias retornado pela função partidasRankeadas
-
-if (saldoVitorias <10) {
-    nivelHeroi = "Ferro"
-
-} else if (saldoVitorias >10 && saldoVitorias <= 20) {
-    nivelHeroi = "Bronze"
-
-} else if (saldoVitorias > 20 && saldoVitorias <= 50 ) {
-    nivelHeroi = "Prata"
-
-} else if (saldoVitorias > 50 && saldoVitorias <= 80 ){
-    nivelHeroi = "Ouro"
-
-}else if (saldoVitorias > 80 && saldoVitorias <= 90 ) {
-    nivelHeroi = "Diamante"
-
-} else if (saldoVitorias > 90 && saldoVitorias <= 100 ) {
-    nivelHeroi = "Lendário"
-
-} else {
-    nivelHeroi = "Imortal"
-}
-
-//Saida final 
-console.log (`O Herói tem de saldo ${saldoVitorias} e está no nível ${nivelHeroi}.`)

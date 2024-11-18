@@ -11,7 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\calculadoraDePartidasRanqueadas.js"
+            "program": "${workspaceFolder}\\classesDeJogo.js"
         }
     ]
 }
